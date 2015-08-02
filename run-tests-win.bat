@@ -1,4 +1,4 @@
-SET CMAKE="..\..\cmake-2.8.11.2-win32-x86\bin\cmake.exe"
+SET CMAKE="..\cmake-3.3.0-win32-x86\bin\cmake.exe"
 SET SOL=unit-test.sln
 SET PROJ=unit-test
 SET CONF=Release
@@ -69,7 +69,17 @@ setlocal
   cd ..
 endlocal
 
+setlocal
+  mkdir build-vc14
+  cd build-vc14
+  call "%VS140COMNTOOLS%"\vsvars32.bat
+  %CMAKE% -G "Visual Studio 14" -DALLOW_MOVE=ON ..
+  msbuild /maxcpucount /p:Configuration=%CONF% /p:VisualStudioVersion=14.0 %PROJ%.vcxproj
+  %EXE% > nul 2>output.log
+  cd ..
+endlocal
+
 rem show results
-type build-vc8\output.log build-vc9\output.log build-vc10\output.log build-vc11\output.log build-vc12\output.log
+type build-vc8\output.log build-vc9\output.log build-vc10\output.log build-vc11\output.log build-vc12\output.log build-vc14\output.log
 
 dm857c\bin\dmc.exe -Ae ..\cpp-copy-elision-NRVO-URVO.cpp && cpp-copy-elision-NRVO-URVO.exe 2> digital-mars-8.57.txt 
