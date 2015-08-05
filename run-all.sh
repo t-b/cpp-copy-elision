@@ -34,7 +34,7 @@ do
   doit "$path/$i/usr/local/bin" "-std=c++0x -DALLOW_MOVE"
 done
 
-for i in gcc-4.7.3 gcc-4.8.2 gcc-4.9.0 gcc-trunk llvm-3.1 llvm-3.2 llvm-3.3 llvm-3.4 llvm-trunk
+for i in gcc-4.7.3 gcc-4.8.5 gcc-4.9.3 gcc-5.1.0 gcc-5.2.0 gcc-trunk llvm-3.4.2 llvm-3.5.2 llvm-3.6.2 llvm-trunk
 do
   doit "$path/$i/usr/local/bin" "-std=c++11 -DALLOW_MOVE"
 done
