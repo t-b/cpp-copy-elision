@@ -14,6 +14,6 @@ if(ALLOW_MOVE)
   add_definitions(-DALLOW_MOVE)
 endif()
 
-add_executable(unit-test cpp-copy-elision-NRVO-URVO.cpp)
+add_executable(unit-test cpp-copy-elision-NRVO-URVO.cpp x.cpp)
 target_link_libraries(unit-test)
 
