@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-unsigned copies = 0;
-unsigned moves = 0;
+volatile unsigned copies = 0;
+volatile unsigned moves = 0;
 
 X::X(const X&)
 {

@@ -3,8 +3,8 @@
 #include <cstring>
 
 #define SIZE 10000
-extern unsigned copies;
-extern unsigned moves;
+extern volatile unsigned copies;
+extern volatile unsigned moves;
 
 struct X {
   X()
