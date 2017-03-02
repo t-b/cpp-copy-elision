@@ -11,8 +11,10 @@ X::X(const X&)
     ++copies;
 }
 
+#ifdef ALLOW_MOVE
 X::X(X&&)
 {
     std::cout << std::flush;
     ++moves;
 }
+#endif
